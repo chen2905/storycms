@@ -18,6 +18,11 @@ require('./config/passport')(passport)
 connectDB() 
 
 const app = express()
+//Body parser
+app.use(express.urlencoded({extended:false}))
+app.use(express.json())
+
+
 //logging
 if (process.env.NODE_ENV==='development'){
     app.use(morgan('dev'))
@@ -36,7 +41,7 @@ store: new MongoStore({mongooseConnection:mongoose.connection})
 
 //passport middleware
 app.use(passport.initialize())
-app.use(passport.session() )
+app.use(passport.session())
 // static folder
 app.use(express.static(path.join(__dirname,'public')))
 //Routes

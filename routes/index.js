@@ -3,7 +3,6 @@ const router = express.Router()
 const{ensureAuth,ensureGuest} = require('../middleware/auth')
 const Story =require('../models/story')
 //const Story = require('../models/Story')
-
 // @desc    Login/Landing page
 // @route   GET /
 router.get('/', ensureGuest, (req, res) => {
@@ -11,7 +10,6 @@ router.get('/', ensureGuest, (req, res) => {
     layout:'login',
   })
 })
-
 //@desc Dashboard
 //@route get /dashboard
 router.get('/dashboard',ensureAuth, async(req,res)=>{
@@ -25,11 +23,6 @@ router.get('/dashboard',ensureAuth, async(req,res)=>{
     console.error(error)
     res.render('error/500')
   }
-
-
-
- 
 })
-
 module.exports = router
  
