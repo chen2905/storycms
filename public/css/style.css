@@ -7,3 +7,13 @@ p{
     margin-top:50px;
     text-align:center;
 }
+.fa-small{
+    font-size: size 9px !important
+}
+.btn-float{
+    float:left;
+    margin-right:10px;
+}
+.img-small{
+    width:180px;
+}
